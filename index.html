@@ -153,17 +153,22 @@ topBtn.onclick = function () {
 };
 // Hide preloader when page finishes loading
 window.onload = function () {
-    setTimeout(function () {
-        document.getElementById("preloader").style.display = "none";
-    }, 500);
-};
+    const preloader = document.getElementById("preloader");
+
+    if (preloader) {
+        setTimeout(function () {
+            preloader.style.display = "none";
+        }, 500);
+    }
 fetch("https://api.countapi.xyz/hit/ibuchivictor-portfolio/visits")
     .then(response => response.json())
     .then(data => {
-        document.getElementById("visitorCount").innerHTML =
-            "👀 Visitors: " + data.value;
+        const visitor = document.getElementById("visitorCount");
+        if (visitor) {
+            visitor.innerHTML = "👀 Visitors: " + data.value;
+        }
     });
-</script>
+    </script>
 <p id="visitorCount">👀 Visitors: Loading...</p>
 <footer>
     <p>© 2026 IBuchi Victor. All Rights Reserved.</p>
