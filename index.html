@@ -7,9 +7,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-<div id="preloader">
-    <div class="loader"></div>
-</div>
 <button id="darkModeBtn" class="btn">🌙 Dark Mode</button>
 <div class="container">
 <h1 class="typing">Victor's Website</h1>
@@ -152,14 +149,6 @@ topBtn.onclick = function () {
     });
 };
 // Hide preloader when page finishes loading
-window.onload = function () {
-    const preloader = document.getElementById("preloader");
-
-    if (preloader) {
-        setTimeout(function () {
-            preloader.style.display = "none";
-        }, 500);
-    }
 fetch("https://api.countapi.xyz/hit/ibuchivictor-portfolio/visits")
     .then(response => response.json())
     .then(data => {
