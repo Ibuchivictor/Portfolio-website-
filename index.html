@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Victor's Website</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+<div id="preloader">
+    <div class="loader"></div>
+</div>
 <button id="darkModeBtn" class="btn">🌙 Dark Mode</button>
 <div class="container">
 <h1 class="typing">Victor's Website</h1>
-<img src="myimage.jpg" alt="My Image"
-width="300">
+<img src="myimage.jpg" alt="My Image" class="profile-img">
 <img src="myimage2.jpg" alt="My second picture">
 <h2>Welcome to my website</h2>
+<section id="journey">
+    <h2>My Journey</h2>
+
+    <p>
+        Hi, I'm <strong>IBuchi Victor</strong>, an aspiring web developer from Lagos, Nigeria.
+    </p>
+
+    <p>
+        This is the first website I have ever built. I started learning web development with freeCodeCamp and have been improving my HTML, CSS, and JavaScript skills by building real projects.
+    </p>
+
+    <p>
+        My goal is to become a professional full-stack web developer and create modern, responsive, and user-friendly websites that solve real-world problems.
+    </p>
+
+    <p>
+        Every line of code I write brings me one step closer to that goal, and this portfolio represents the beginning of my journey.
+    </p>
+</section>
 <p>I am learning HTML with freeCodeCamp.</p>
 <p>I will become a proffessional web developer.</p>
 <h2>Contact Me</h2>
@@ -27,6 +50,7 @@ width="300">
 <a href="about.html">
       <button>About Me</button>
 </a>
+<a href="IBuchi_Victor_CV_Updated.pdf" class="btn" download>📄 Download CV</a>
 <h2 id="skills">My Skills</h2>
 
 <div class="skill">
@@ -87,23 +111,72 @@ width="300">
 <a href="https://github.com/ibuchivictor/Portfolio-website-" class="btn" target="_blank">View Code</a>
 </div>
 </section>
-</nav>
+<a href="#projects">Projects</a>
+<button id="topBtn" title="Go to top">⬆</button>
 <script>
-    let name= document.getElementById("name").value;
-    alert("Thank you, " + name + "! Your message has been received.");
-}
 const btn = document.getElementById("darkModeBtn");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    btn.innerHTML = "☀️ Light Mode";
+}
 
 btn.onclick = function () {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
         btn.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
     } else {
         btn.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
     }
 };
+
+const topBtn = document.getElementById("topBtn");
+
+window.onscroll = function () {
+    if (document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+};
+
+topBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+// Hide preloader when page finishes loading
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById("preloader").style.display = "none";
+    }, 500);
+};
+fetch("https://api.countapi.xyz/hit/ibuchivictor-portfolio/visits")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("visitorCount").innerHTML =
+            "👀 Visitors: " + data.value;
+    });
 </script>
-<a href="#projects">Projects</a>
+<p id="visitorCount">👀 Visitors: Loading...</p>
+<footer>
+    <p>© 2026 IBuchi Victor. All Rights Reserved.</p>
+
+    <div class="social-icons">
+        <a href="https://github.com/ibuchivictor" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+
+        <a href="mailto:chukwukavictor2022@gmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</footer>
 </body>
 </html>
