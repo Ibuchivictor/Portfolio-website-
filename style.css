@@ -1,0 +1,280 @@
+html {
+    scroll-behavior: smooth;
+}body {
+    text-align: center;
+  background-color: #f0f8ff; /*Light blue */
+  font-family:Arial,
+sans-serif;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+.container {
+    max-width:600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px
+rgba(0, 0, 0, 0.2);
+}
+h1 {
+  color: blue;
+}
+h2 {
+  color: purple;
+}  
+p {
+  color: green;
+  font-size: 20px;
+}
+img {
+    width: 300px;
+    height: auto;
+    border: 3px solid blue;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+button:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+a {
+    text-decoration: none;
+    color:white;
+}
+a:visited {
+    color:white;
+}
+a button{
+    color: white;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+nav {
+   position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    line-height: normal; /*
+remove the 60px line-height */
+}
+    font-size: 14px;  /* change from 15px to 14px */
+    font-weight: bold;
+}
+nav a:hover {
+   color: yellow;
+   transition: color 0.3s;
+}
+#projects {
+    text-align: center;
+    padding: 30px;
+}
+
+#projects h2 {
+    color: purple;
+    font-size: 40px;
+}
+
+.project {
+    background: #f5f5f5;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 85%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+
+.project h3 {
+    color: blue;
+}
+
+.project p {
+    color: #333;
+    font-size: 18px;
+}
+.project img {
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+.project {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn {
+    display: inline-block;
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.btn:active {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background: darkblue;
+}
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.typing {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid blue;
+    animation: typing 3s steps(17, end) forwards,
+               blink 0.8s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 17ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+.skill {
+    margin: 20px;
+    text-align: center
+    font-weight: bold;
+    margin-bottom:10px
+}
+
+.bar {
+    width: 100%;
+    height: 24px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    width: 0;
+    background: blue;
+    border-radius: 20px;
+    animation: fillBar 2s forwards;
+}
+
+.html {
+    animation-delay: 0.2s;
+    --target-width: 95%;
+}
+
+.css {
+    animation-delay: 0.4s;
+    --target-width: 90%;
+}
+
+.javascript {
+    animation-delay: 0.6s;
+    --target-width: 70%;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+#theme-btn {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+#theme-btn:hover {
+    background: darkblue;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .project {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.dark-mode .bar {
+    background-color: #444;
+}
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+body.dark-mode .container,
+body.dark-mode .project,
+body.dark-mode .card {
+    background: #1f1f1f;
+    color: white;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+    color: white;
+}
