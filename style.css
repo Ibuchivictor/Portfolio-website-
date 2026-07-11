@@ -476,3 +476,19 @@ footer {
     font-weight: bold;
     margin: 20px 0;
 }
+.visitor-box {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.visitor-box h3 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.visitor-box img {
+    border-radius: 12px;
+    max-width: 220px;
+    width: 100%;
+}
