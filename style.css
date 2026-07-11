@@ -489,7 +489,7 @@ footer {
     gap: 10px;
 }
 .visitor-box img {
-    height: 35px;
+    height: 50px;
     width: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 }
