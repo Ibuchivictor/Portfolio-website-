@@ -149,22 +149,10 @@ topBtn.onclick = function () {
     });
 };
 // Hide preloader when page finishes loading
-fetch("https://api.countapi.xyz/hit/ibuchivictor-portfolio/visits")
-  .then(response => response.json())
-  .then(data => {
-    const visitor = document.getElementById("visitorCount");
-    if (visitor) {
-      visitor.textContent = "👀 Visitors: " + data.value;
-    }
-  })
-  .catch(() => {
-    const visitor = document.getElementById("visitorCount");
-    if (visitor) {
-      visitor.textContent = "👀 Visitors: Unavailable";
-    }
-  });
     </script>
-<p id="visitorCount">👀 Visitors: Loading...</p>
+<p id="visitorCount">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=ibuchivictor.portfolio-website" alt="Visitor Count">
+</p>
 <footer>
     <p>© 2026 IBuchi Victor. All Rights Reserved.</p>
 
